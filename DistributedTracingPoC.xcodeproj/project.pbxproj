@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60855E2E29763ECB00E2A132 /* DistributedTracingPoCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E2D29763ECB00E2A132 /* DistributedTracingPoCApp.swift */; };
-		60855E3029763ECB00E2A132 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E2F29763ECB00E2A132 /* ContentView.swift */; };
+		60855E3029763ECB00E2A132 /* AuthorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E2F29763ECB00E2A132 /* AuthorsView.swift */; };
 		60855E3229763ECC00E2A132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60855E3129763ECC00E2A132 /* Assets.xcassets */; };
 		60855E3529763ECC00E2A132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60855E3429763ECC00E2A132 /* Preview Assets.xcassets */; };
 		60855E3F29763ECC00E2A132 /* DistributedTracingPoCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E3E29763ECC00E2A132 /* DistributedTracingPoCTests.swift */; };
@@ -16,6 +16,16 @@
 		60855E4B29763ECC00E2A132 /* DistributedTracingPoCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E4A29763ECC00E2A132 /* DistributedTracingPoCUITestsLaunchTests.swift */; };
 		60855E592976402400E2A132 /* OpenTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 60855E582976402400E2A132 /* OpenTelemetry */; };
 		60855E5B2976402400E2A132 /* OtlpGRPCSpanExporting in Frameworks */ = {isa = PBXBuildFile; productRef = 60855E5A2976402400E2A132 /* OtlpGRPCSpanExporting */; };
+		60855E5D297651A400E2A132 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E5C297651A400E2A132 /* Author.swift */; };
+		60855E5F297651BC00E2A132 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E5E297651BC00E2A132 /* Book.swift */; };
+		60855E612976528900E2A132 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E602976528900E2A132 /* Network.swift */; };
+		60855E63297654EE00E2A132 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E62297654EE00E2A132 /* Cache.swift */; };
+		60855E652976EAB700E2A132 /* AuthorsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E642976EAB700E2A132 /* AuthorsFetcher.swift */; };
+		60855E672976EB7300E2A132 /* BooksFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E662976EB7300E2A132 /* BooksFetcher.swift */; };
+		60855E692976FB1500E2A132 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E682976FB1500E2A132 /* BooksView.swift */; };
+		60855E6B297712AB00E2A132 /* TracingValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E6A297712AB00E2A132 /* TracingValues.swift */; };
+		60855E6D297716F500E2A132 /* URLSession+DataWithTracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E6C297716F500E2A132 /* URLSession+DataWithTracing.swift */; };
+		60855E6F297718A800E2A132 /* Span+NewSpan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E6E297718A800E2A132 /* Span+NewSpan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +48,7 @@
 /* Begin PBXFileReference section */
 		60855E2A29763ECB00E2A132 /* DistributedTracingPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistributedTracingPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60855E2D29763ECB00E2A132 /* DistributedTracingPoCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributedTracingPoCApp.swift; sourceTree = "<group>"; };
-		60855E2F29763ECB00E2A132 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		60855E2F29763ECB00E2A132 /* AuthorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsView.swift; sourceTree = "<group>"; };
 		60855E3129763ECC00E2A132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60855E3429763ECC00E2A132 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60855E3A29763ECC00E2A132 /* DistributedTracingPoCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistributedTracingPoCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +56,16 @@
 		60855E4429763ECC00E2A132 /* DistributedTracingPoCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistributedTracingPoCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60855E4829763ECC00E2A132 /* DistributedTracingPoCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributedTracingPoCUITests.swift; sourceTree = "<group>"; };
 		60855E4A29763ECC00E2A132 /* DistributedTracingPoCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributedTracingPoCUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		60855E5C297651A400E2A132 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		60855E5E297651BC00E2A132 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		60855E602976528900E2A132 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		60855E62297654EE00E2A132 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		60855E642976EAB700E2A132 /* AuthorsFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsFetcher.swift; sourceTree = "<group>"; };
+		60855E662976EB7300E2A132 /* BooksFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksFetcher.swift; sourceTree = "<group>"; };
+		60855E682976FB1500E2A132 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
+		60855E6A297712AB00E2A132 /* TracingValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingValues.swift; sourceTree = "<group>"; };
+		60855E6C297716F500E2A132 /* URLSession+DataWithTracing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataWithTracing.swift"; sourceTree = "<group>"; };
+		60855E6E297718A800E2A132 /* Span+NewSpan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Span+NewSpan.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +119,19 @@
 			isa = PBXGroup;
 			children = (
 				60855E2D29763ECB00E2A132 /* DistributedTracingPoCApp.swift */,
-				60855E2F29763ECB00E2A132 /* ContentView.swift */,
+				60855E2F29763ECB00E2A132 /* AuthorsView.swift */,
+				60855E6A297712AB00E2A132 /* TracingValues.swift */,
+				60855E682976FB1500E2A132 /* BooksView.swift */,
+				60855E5C297651A400E2A132 /* Author.swift */,
+				60855E5E297651BC00E2A132 /* Book.swift */,
+				60855E602976528900E2A132 /* Network.swift */,
+				60855E62297654EE00E2A132 /* Cache.swift */,
+				60855E642976EAB700E2A132 /* AuthorsFetcher.swift */,
+				60855E662976EB7300E2A132 /* BooksFetcher.swift */,
 				60855E3129763ECC00E2A132 /* Assets.xcassets */,
 				60855E3329763ECC00E2A132 /* Preview Content */,
+				60855E6C297716F500E2A132 /* URLSession+DataWithTracing.swift */,
+				60855E6E297718A800E2A132 /* Span+NewSpan.swift */,
 			);
 			path = DistributedTracingPoC;
 			sourceTree = "<group>";
@@ -268,7 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60855E3029763ECB00E2A132 /* ContentView.swift in Sources */,
+				60855E612976528900E2A132 /* Network.swift in Sources */,
+				60855E692976FB1500E2A132 /* BooksView.swift in Sources */,
+				60855E6F297718A800E2A132 /* Span+NewSpan.swift in Sources */,
+				60855E5F297651BC00E2A132 /* Book.swift in Sources */,
+				60855E6D297716F500E2A132 /* URLSession+DataWithTracing.swift in Sources */,
+				60855E652976EAB700E2A132 /* AuthorsFetcher.swift in Sources */,
+				60855E5D297651A400E2A132 /* Author.swift in Sources */,
+				60855E672976EB7300E2A132 /* BooksFetcher.swift in Sources */,
+				60855E6B297712AB00E2A132 /* TracingValues.swift in Sources */,
+				60855E3029763ECB00E2A132 /* AuthorsView.swift in Sources */,
+				60855E63297654EE00E2A132 /* Cache.swift in Sources */,
 				60855E2E29763ECB00E2A132 /* DistributedTracingPoCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

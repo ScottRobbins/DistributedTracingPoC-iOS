@@ -1,10 +1,3 @@
-//
-//  DistributedTracingPoCApp.swift
-//  DistributedTracingPoC
-//
-//  Created by Scott Robbins on 1/16/23.
-//
-
 import SwiftUI
 import NIO
 import OpenTelemetry
@@ -27,14 +20,16 @@ struct DistributedTracingPoCApp: App {
         try! otel.start().wait()
         InstrumentationSystem.bootstrap(otel.tracer())
         
-        let rootSpan = InstrumentationSystem.tracer.startSpan("application-launched", baggage: .topLevel)
-        rootSpan.addEvent(.init(name: "application-launched"))
-        defer { rootSpan.end() }
+        Task {
+            try await SpanUtils.startSpan("initializing-application") { span in
+                span.addEvent(.init(name: "application-launched"))
+            }
+        }
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AuthorsView()
         }
     }
 }
