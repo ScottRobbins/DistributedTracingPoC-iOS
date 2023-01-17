@@ -14,6 +14,8 @@
 		60855E3F29763ECC00E2A132 /* DistributedTracingPoCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E3E29763ECC00E2A132 /* DistributedTracingPoCTests.swift */; };
 		60855E4929763ECC00E2A132 /* DistributedTracingPoCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E4829763ECC00E2A132 /* DistributedTracingPoCUITests.swift */; };
 		60855E4B29763ECC00E2A132 /* DistributedTracingPoCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60855E4A29763ECC00E2A132 /* DistributedTracingPoCUITestsLaunchTests.swift */; };
+		60855E592976402400E2A132 /* OpenTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 60855E582976402400E2A132 /* OpenTelemetry */; };
+		60855E5B2976402400E2A132 /* OtlpGRPCSpanExporting in Frameworks */ = {isa = PBXBuildFile; productRef = 60855E5A2976402400E2A132 /* OtlpGRPCSpanExporting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60855E5B2976402400E2A132 /* OtlpGRPCSpanExporting in Frameworks */,
+				60855E592976402400E2A132 /* OpenTelemetry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,10 @@
 			dependencies = (
 			);
 			name = DistributedTracingPoC;
+			packageProductDependencies = (
+				60855E582976402400E2A132 /* OpenTelemetry */,
+				60855E5A2976402400E2A132 /* OtlpGRPCSpanExporting */,
+			);
 			productName = DistributedTracingPoC;
 			productReference = 60855E2A29763ECB00E2A132 /* DistributedTracingPoC.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 60855E2129763ECB00E2A132;
+			packageReferences = (
+				60855E572976402400E2A132 /* XCRemoteSwiftPackageReference "swift-otel" */,
+			);
 			productRefGroup = 60855E2B29763ECB00E2A132 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +594,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60855E572976402400E2A132 /* XCRemoteSwiftPackageReference "swift-otel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slashmo/swift-otel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60855E582976402400E2A132 /* OpenTelemetry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60855E572976402400E2A132 /* XCRemoteSwiftPackageReference "swift-otel" */;
+			productName = OpenTelemetry;
+		};
+		60855E5A2976402400E2A132 /* OtlpGRPCSpanExporting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60855E572976402400E2A132 /* XCRemoteSwiftPackageReference "swift-otel" */;
+			productName = OtlpGRPCSpanExporting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 60855E2229763ECB00E2A132 /* Project object */;
 }
