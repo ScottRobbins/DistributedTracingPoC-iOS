@@ -1,7 +1,7 @@
 struct AuthorsFetcher {
     func getAuthors() async throws -> [Author] {
         return try await SpanUtils.startSpan("get-authors") { span in
-            let cache = Cache()
+            let cache = Cache.shared
             let network = Network()
             
             if let cachedAuthors = try? await cache.getAuthors() {
