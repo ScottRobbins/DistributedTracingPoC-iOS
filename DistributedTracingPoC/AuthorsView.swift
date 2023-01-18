@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct AuthorsView: View {
-    @State private var authors = [Author: [Book]]()
+    @State private var authors = [Author]()
     
     var body: some View {
         NavigationStack {            
-            List(Array(authors.keys)) { author in
+            List(authors) { author in
                 NavigationLink(author.name) {
-                    BooksView(books: authors[author]!)
+                    BooksView(authorId: author.id)
                 }
             }
             .navigationTitle("Authors")
@@ -15,13 +15,8 @@ struct AuthorsView: View {
                 do {
                     try await SpanUtils.startSpan("load-data-for-authors-view") { span in
                         let authorsFetcher = AuthorsFetcher()
-                        let booksFetcher = BooksFetcher()
                         
-                        let authors = try await authorsFetcher.getAuthors()
-                        for author in authors {
-                            let books = try await booksFetcher.getBooks(authorId: author.id)
-                            self.authors[author] = books
-                        }
+                        self.authors = try await authorsFetcher.getAuthors()
                     }
                 } catch let e {
                     print(String(describing: e))
